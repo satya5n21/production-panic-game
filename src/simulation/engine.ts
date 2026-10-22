@@ -1,6 +1,7 @@
 import {
   ActionId,
   EscalationPhase,
+  LogEntry,
   ScenarioId,
   ServiceId,
   ServiceState,
@@ -958,7 +959,7 @@ export function applyPlayerAction(
           timeRemaining: state.timeRemaining,
           level: 'WARN',
           message: warningMsg
-        },
+        } satisfies LogEntry,
         ...state.logs
       ].slice(0, 45)
     };
